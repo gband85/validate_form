@@ -9,6 +9,9 @@
             display: flex;
             flex-direction: column;
         }
+        input:invalid {
+            background-color: #fdd;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -21,19 +24,19 @@
                 <span class="error"></span>
                 </label>
                  <label for="country">country:
-                 <input type="text" id="country" name="country">
+                 <input type="text" id="country" name="country" required minlength="2">
                  <span class="error"></span>
                  </label>
 <label for="zip">Zipcode:
-                 <input type="number" id="zip" name="zip">
+                 <input type="number" id="zip" name="zip" required min="00501" max="99950">
                  <span class="error"></span>
                 </label>
 <label for="password">password:
-<input type="password" id="password" name="password">
+<input type="password" id="password" name="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required>
 <span class="error"></span>
 </label>
 <label for="password2">confirm password:
-<input type="password" id="password2" name="password2">
+<input type="password" id="password2" name="password2" required>
 <span class="error"></span>
 </label>
             </fieldset>
